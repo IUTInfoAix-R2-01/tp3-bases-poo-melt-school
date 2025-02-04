@@ -2,19 +2,19 @@ package yaip;
 
 public class Book {
 	private String name;
-	private Author author;
+	private Author[] authors;
 	private double price;
 	private int quantity = 0;
 	
-	public Book(String name, Author author, double price) {
+	public Book(String name, Author[] authors, double price) {
 		this.name = name;
-		this.author = author;
+		this.authors = authors;
 		this.price = price;
 	}
 	
-	public Book(String name, Author author, double price, int quantity) {
+	public Book(String name, Author[] authors, double price, int quantity) {
 		this.name = name;
-		this.author = author;
+		this.authors = authors;
 		this.price = price;
 		this.quantity = quantity;
 	}
@@ -23,8 +23,8 @@ public class Book {
 		return name;
 	}
 
-	public Author getAuthor() {
-		return author;
+	public Author[] getAuthor() {
+		return authors;
 	}
 
 	public double getPrice() {
@@ -43,20 +43,41 @@ public class Book {
 		this.quantity = quantity;
 	}
 	
-	public String getAuthorName() {
-		return author.getName();
+	public String getAuthorsName() {
+		String listeNoms = "";
+		listeNoms += authors[0].getName();
+		for (int i = 1; i < authors.length; i++) {
+			listeNoms += ",";
+			listeNoms += authors[i].getName();
+		};
+		return listeNoms;
 	}
 	
 	public String getAuthorEmail() {
-		return author.getEmail();
+		String listeEmail = "";
+		for (Author author : authors) {
+			listeEmail += author.getEmail();
+		};
+		return listeEmail;
 	}
 	
-	public char getAuthorGender() {
-		return author.getGender();
+	public String getAuthorGender() {
+		String listeChar = "";
+		for (Author author : authors) {
+			listeChar += author.getGender();
+		};
+		return listeChar;
 	}
 	
 	public String toString() {
-		return "[name=" + name + "," + author.toString() + ",price=" + price + ",quantity=" + quantity + "]";
+		String listAuthors = "";
+		listAuthors += authors[1].toString();
+		for (int i = 1; i < authors.length; i++) {
+			listAuthors += ",";
+			listAuthors += authors[i].toString();
+			
+		}
+		return "[name=" + name + "," + listAuthors.toString() + ",price=" + price + ",quantity=" + quantity + "]";
 	}
 
 }
