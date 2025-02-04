@@ -23,6 +23,10 @@ public class Livre {
 		return Quantity;
 	}
 	
+	public void setQuantity(int Quantity) {
+		this.Quantity = Quantity;
+	}
+	
 	public String toString() {
 		return "Livre[Name=" + Name + ",Price=" + Price + ",Quantity=" + Quantity + "]";
 	}

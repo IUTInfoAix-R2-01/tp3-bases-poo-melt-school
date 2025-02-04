@@ -9,6 +9,9 @@ public class TestLivre {
 	    		l1.getQuantity() + "Exemplaire");
 	      
 	    System.out.println(l1.toString());
+	    
+	    l1.setQuantity(16);
+	    System.out.println("Nouvelle quantité " + l1.getQuantity());
 	}
 
 }
