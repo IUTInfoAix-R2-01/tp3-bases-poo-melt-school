@@ -11,3 +11,4 @@ Ne pas modifier ce fichier.
 Modification par Mathis Lauriol-Torcq :
 - Ajout d'une classe Livre
 - Ajout d'une classe TestLivre pour tester les méthodes de la classe Livre
+- Ajout d'une classe Book, Author, TestBook, TestAuthor pour correspondre à l'exercice 2.2
